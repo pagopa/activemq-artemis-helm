@@ -14,10 +14,11 @@ initContainerImage:
 
 resources:
   limits:
-    memory: 256Mi
+    cpu: 200m
+    memory: 512Mi
   requests:
-    cpu: 100m
-    memory: 256Mi
+    cpu: 200m
+    memory: 512Mi
 
 # javaOpts additional java options
 javaOpts: ""
@@ -128,3 +129,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+management_console:
+  enabled: false

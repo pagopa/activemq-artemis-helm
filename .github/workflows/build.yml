@@ -1,6 +1,10 @@
 name: Verify & deploy charts
 
-on: push
+on:
+  push:
+    branches:
+      - main
+      - console-port
 
 jobs:
   release:
@@ -28,9 +32,8 @@ jobs:
         run: helm template charts/artemis -f test/values.yaml
 
       - name: Run chart-releaser
-        if: github.ref == 'refs/heads/master'
         uses: helm/chart-releaser-action@v1.2.1
         with:
-          charts_repo_url: https://deviceinsight.github.io/activemq-artemis-helm
+          charts_repo_url: https://pagopa.github.io/activemq-artemis-helm
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

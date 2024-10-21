@@ -23,6 +23,7 @@ helm repo add activemq-artemis https://deviceinsight.github.io/activemq-artemis-
 * adapt `CHANGELOG.md`
 * bump up chart version (with `-SNAPSHOT`) for next development cycle
 * after pushing  the master, chart will be automatically pushed to github pages
-## Forked From
+
+### Forked From
 
 This project is a fork of [activemq-artemis-helm](https://github.com/deviceinsight/activemq-artemis-helm).

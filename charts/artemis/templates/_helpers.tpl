@@ -187,7 +187,7 @@ containers:
   - name: data
     mountPath: /var/lib/artemis/data
   - name: etc-override
-    mountPath: /var/lib/artemis/etc-override
+    mountPath: /var/lib/artemis-instance/etc-override
   - name: jgroups
     mountPath: /var/lib/artemis/etc/jgroups
   - name: artemis-users

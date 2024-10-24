@@ -268,3 +268,17 @@ volumeClaimTemplates:
         storage: {{ .Values.persistence.storageSize }}
   {{- end }}
 {{- end -}}
+
+{{- define "artemis.xmlValue" -}}
+{{- if kindIs "map" . -}}
+{{ range $key, $value := . }}
+    <{{ kebabcase $key }}>{{ include "artemis.xmlValue" $value }}</{{ kebabcase $key }}>
+{{- end -}}
+{{- else if kindIs "slice" . -}}
+{{- range $value := . }}
+    {{ include "artemis.xmlValue" $value }}
+{{- end -}}
+{{- else -}}
+{{- . -}}
+{{- end -}}
+{{- end -}}

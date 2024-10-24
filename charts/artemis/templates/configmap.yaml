@@ -22,7 +22,7 @@ data:
         <xi:include href="../etc-override/discovery.xml"/>
 
         {{- range $key, $value := .Values.core }}
-        <{{ kebabcase $key }}>{{ $value }}</{{ kebabcase $key }}>
+        <{{ kebabcase $key }}>{{ include "artemis.xmlValue" $value }}</{{ kebabcase $key }}>
         {{- end }}
       </core>
     </configuration>

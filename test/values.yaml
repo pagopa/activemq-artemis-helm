@@ -1,9 +1,48 @@
 image:
-  repository: some/image
-  tag: 2.17.0
+  repository: apache/activemq-artemis
+  tag: 2.38.0
 
-core:
-  haPolicy:
-    replication:
-      master:
-        groupName: artemis-ha-group
+resources:
+  limits:
+    memory: 1Gi
+  requests:
+    memory: 1Gi
+
+management_console:
+  enabled: true
+
+replicaCount: 1
+
+persistence:
+  enabled: true
+  storageClass: default-zrs
+  accessMode: ReadWriteOnce
+  storageSize: 10Gi
+
+ha:
+  enabled: false
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: node_type
+              operator: In
+              values:
+                - user
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchLabels:
+              app.kubernetes.io/instance: p4pa-artemis
+          namespaces: [ artemis ]
+          topologyKey: topology.kubernetes.io/zone
+
+podSecurityContext:
+  fsGroup: 1001
+
+metrics:
+  enabled: false

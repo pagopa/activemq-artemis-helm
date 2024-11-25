@@ -25,7 +25,7 @@ spec:
             {{- fail "When running in high availability ('ha.enabled=true') persistence must be enabled ('persistence.enabled=true'"}}
           {{- end }}
           - key: broker-ha-live.xml
-            path: broker-00.xml
+            path: broker.xml
           - key: ha-live.xml
             path: ha-live.xml
           {{- else }}

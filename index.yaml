@@ -15,6 +15,18 @@ entries:
     version: 0.10.0-SNAPSHOT
   - apiVersion: v1
     appVersion: 2.9.0
+    created: "2024-11-25T14:15:51.10640472Z"
+    description: A Helm chart installing Apache ActiveMQ Artemis
+    digest: 93d849a7b3e9f519ce95c02f250aa1b94cc0f1d1ba06fa438a799f20c7842ca9
+    icon: https://raw.githubusercontent.com/apache/activemq-artemis/2.9.0/artemis-website/src/main/resources/images/artemis-logo.png
+    maintainers:
+    - name: payments-cloud-admin@github
+    name: artemis
+    urls:
+    - https://github.com/pagopa/activemq-artemis-helm/releases/download/artemis-0.9.0/artemis-0.9.0.tgz
+    version: 0.9.0
+  - apiVersion: v1
+    appVersion: 2.9.0
     created: "2024-10-21T11:29:47.817164266Z"
     description: A Helm chart installing Apache ActiveMQ Artemis
     digest: 431c869099a2d0a62276e4da4e800adf8f1ecc900b75d2625e3bb5a5a508c09b
@@ -61,4 +73,4 @@ entries:
     urls:
     - https://github.com/pagopa/activemq-artemis-helm/releases/download/artemis-0.8.1-SNAPSHOT/artemis-0.8.1-SNAPSHOT.tgz
     version: 0.8.1-SNAPSHOT
-generated: "2024-11-25T10:37:07.131483921Z"
+generated: "2024-11-25T14:15:51.106448041Z"

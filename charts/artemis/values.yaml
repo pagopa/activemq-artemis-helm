@@ -9,7 +9,7 @@ image:
 
 initContainerImage:
   repository: bash
-  tag: 5
+  tag: 5@sha256:bfe38ab74faa887cdbe5849dad0572fde3a5c75b99ea554890de7e52c7de8f6d
   pullPolicy: IfNotPresent
 
 resources:
